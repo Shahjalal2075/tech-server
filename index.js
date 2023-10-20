@@ -48,7 +48,7 @@ async function run() {
       const brand = req.params.brand;
       const query = { brandName: brand }
       const product = usersCollectionProducts.find(query);
-      const result =await product.toArray();
+      const result = await product.toArray();
       res.send(result);
     })
 
@@ -80,14 +80,14 @@ async function run() {
     })
 
     app.post('/products', async (req, res) => {
-      const user = req.body;
-      console.log('new user', user);
-      const result = await usersCollectionProducts.insertOne(user);
+      const product = req.body;
+      console.log('new product', product);
+      const result = await usersCollectionProducts.insertOne(product);
       res.send(result);
     })
 
 
-    
+
     /*app.get('/products/:id', async (req, res) => {
       const id = req.params.id;
       const query = { _id: new ObjectId(id) };
