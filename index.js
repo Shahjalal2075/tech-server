@@ -87,6 +87,7 @@ async function run() {
     })
 
 
+    
     /*app.get('/products/:id', async (req, res) => {
       const id = req.params.id;
       const query = { _id: new ObjectId(id) };
@@ -144,7 +145,7 @@ run().catch(console.dir);
 
 
 app.get('/', (req, res) => {
-  res.send("Curd Running");
+  res.send("Curd Running server");
 })
 
 app.listen(port, () => {
