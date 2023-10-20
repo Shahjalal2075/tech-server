@@ -31,9 +31,16 @@ async function run() {
     const database = client.db("techDB");
     const usersCollectionBrands = database.collection("brands");
     const usersCollectionProducts = database.collection("products");
+    const usersCollectionCart = database.collection("cart");
 
     app.get('/brands', async (req, res) => {
       const cursor = usersCollectionBrands.find()
+      const result = await cursor.toArray();
+      res.send(result);
+    })
+
+    app.get('/cart', async (req, res) => {
+      const cursor = usersCollectionCart.find()
       const result = await cursor.toArray();
       res.send(result);
     })
