@@ -101,6 +101,13 @@ async function run() {
       res.send(result);
     })
 
+    app.post('/cart', async (req, res) => {
+      const product = req.body;
+      console.log('new cart product', product);
+      const result = await usersCollectionCart.insertOne(product);
+      res.send(result);
+    })
+
 
 
     /*app.get('/products/:id', async (req, res) => {
