@@ -174,7 +174,7 @@ run().catch(console.dir);
 
 
 app.get('/', (req, res) => {
-  res.send("Curd Running server");
+  res.send("Curd Running serverr");
 })
 
 app.listen(port, () => {
